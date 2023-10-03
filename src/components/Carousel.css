@@ -1,0 +1,18 @@
+.thumbnail img {
+    height: 40px;
+    cursor: pointer;
+}
+
+.thumbnail.active img {
+    border-width: 6px;
+    border-style: double;
+    height: 40px;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 20px;
+    height: auto;
+    margin-top: 40px;
+    margin-left: 100px;
+}
