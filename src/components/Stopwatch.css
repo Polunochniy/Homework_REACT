@@ -1,0 +1,70 @@
+.stopwatch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 180px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+button {
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    cursor: pointer;
+    border: rgb(255, 255, 255) 8px double;
+}
+
+.pause {
+    background: url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-pause-512.png) red;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.start {
+    background: url(https://icons.veryicon.com/png/o/miscellaneous/winsion/play-button-6.png) rgb(18, 205, 1);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.reset {
+    background: url(https://www.pngarts.com/files/7/Update-Button-PNG-Photo.png) rgb(0, 111, 246);
+    background-size: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.scoreboard {
+    background-color: rgb(26, 25, 25);
+    height: 300px;
+    width: 500px;
+    border-radius: 80px;
+    border: rgb(255, 255, 255) 8px double;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer {
+    margin-top: 50px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.pausedTimes {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    flex-wrap: wrap;
+    width: 350px;
+    height: 150px;
+    margin-top: 30px;
+}
