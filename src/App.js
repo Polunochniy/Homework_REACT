@@ -1,15 +1,12 @@
 import React from 'react';
-import Header from './components/Header/Header';
-import Body from './components/Body/Body';
-import Footer from './components/Footer/Footer';
-import './components/Body/Body.css';
+import Stopwatch from './components/Stopwatch'
+import './components/Stopwatch.css';
+import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div>
-      <Header />
-      <Body />
-      <Footer />
+      <Stopwatch />
     </div>
   );
 }
