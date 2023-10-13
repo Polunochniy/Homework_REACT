@@ -14,9 +14,6 @@ import Projects from './components/Projects';
 import Partners from './components/Partners';
 
 
-
-
-
 const router = createBrowserRouter([
   {
     path: "/",
