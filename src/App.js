@@ -1,15 +1,20 @@
 import React from 'react';
-import Header from './components/Header/Header';
-import Body from './components/Body/Body';
-import Footer from './components/Footer/Footer';
-import './components/Body/Body.css';
+import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <Header />
-      <Body />
-      <Footer />
+    <div className='header'>
+      <img src='https://phonoteka.org/uploads/posts/2023-03/1680022972_phonoteka-org-p-nirvana-logotip-art-krasivo-60.png'></img>
+      <ul>
+        <li className='menu'>
+          <a href={'/'}>HOME</a>
+          <a href={'/aboutus'}>ABOUT US</a>
+          <a href={'/services'}>SERVICES</a>
+          <a href={'/projects'}>PROJECTS</a>
+          <a href={'/partners'}>PARTNERS</a>
+          <a href={'/contacts'}>CONTACTS</a>
+        </li>
+      </ul>
     </div>
   );
 }
