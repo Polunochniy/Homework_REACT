@@ -1,0 +1,11 @@
+.logo {
+  height: 24px;
+  width: 24px;
+}
+.logo:hover {
+  cursor: pointer;
+}
+.logoActive {
+  height: 48px;
+  width: 48px;
+}
