@@ -1,21 +1,19 @@
 import React from 'react';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom/client';
-import getStore from "./redux";
 import './index.css';
+import { ApolloProvider } from '@apollo/client';
+import getStore from './redux';
 import App from './App';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-
-
-const GQL_SERVER_URL = 'http://shop-roles.node.ed.asmer.org.ua/graphql'
+import { client } from './api';
+import { createBrowserHistory } from 'history';
+import { ToastContainer } from 'react-toastify';
+// import './../react-toastify/dist/ReactToastify.css';
+import './../node_modules/react-toastify/dist/ReactToastify.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-export const store = getStore()
-
-const client = new ApolloClient({
-  uri: GQL_SERVER_URL,
-  cache: new InMemoryCache(),
-});
+export const history = createBrowserHistory();
+export const store = getStore();
 
 
 root.render(

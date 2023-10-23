@@ -1,2 +1,6 @@
 
-export const getImageURL = () => 'https://upload.wikimedia.org/wikipedia/commons/9/94/%D0%9B%D0%95%D0%9D%D0%A2%D0%90_%D0%BB%D0%BE%D0%B3%D0%BE.jpg'
+export const getImageURL = () => 'https://i.ibb.co/R74YH6r/Frame-1-1.png'
+
+export const getImageURLSearch = () => 'https://i.ibb.co/2kCZZRD/icon.png'
+
+export const getImageURLPhone = () => 'https://i.ibb.co/GkCSnnr/free-icon-phone-call-5585562.png'

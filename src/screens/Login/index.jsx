@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useQuery, gql } from '@apollo/client';
 import { setUserNameActionCreator, setUserEmailActionCreator, setUserTokenAC } from '../../redux/reducers/userReducer'
+import { useNavigate } from 'react-router-dom';
 
 const GET_TOKEN = gql`
   query getToken {
@@ -10,7 +11,8 @@ const GET_TOKEN = gql`
 `;
 
 const Login = () => {
-  const { data } = useQuery(GET_TOKEN);
+  const [fetchAuth, { data }] = useQuery(GET_TOKEN);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [userInfo, setUserInfo] = useState({
     login: 'admin',
@@ -19,8 +21,8 @@ const Login = () => {
 
   useEffect(() => {
     if(data) {
-      console.log(data)
       dispatch(setUserTokenAC(data.login))
+      setTimeout(() => navigate("/contacts"), 2000)
     }
   }, [data]);
 
