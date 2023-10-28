@@ -1,14 +1,12 @@
 import React from 'react'
 import styles from './Home.module.css';
 import Header from '../../components/Header';
-import Menu from '../../components/Menu';
 import Slider from '../../components/Slider';
 
 export const Home = () => {
   return (
     <div className={styles.home}>
       <Header />
-      <Menu />
       <Slider />
       <div className={styles.info}>
           <div className={styles.infoColumn}>

@@ -5,7 +5,7 @@ import styles from './Logo.module.css'
 const Logo = ({greeting, onLogoClick}) => {
     const handleLogoClick = () => {
         if (onLogoClick) {
-            onLogoClick('/about');
+            onLogoClick('/');
         }
     };
 

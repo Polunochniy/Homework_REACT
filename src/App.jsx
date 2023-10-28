@@ -11,6 +11,7 @@ import Home from './screens/Home';
 import News from './screens/News';
 import Guarantee from './screens/Guarantee';
 import AboutUs from './screens/AboutUs';
+import Goods from './screens/Goods';
 
 export const routes = [
   {
@@ -43,6 +44,11 @@ export const routes = [
     path: "/about-us",
     name: "About us",
     element: <AboutUs />,
+  },
+  {
+    path: "/goods",
+    name: "Goods",
+    element: <Goods />,
   },
 ]
 

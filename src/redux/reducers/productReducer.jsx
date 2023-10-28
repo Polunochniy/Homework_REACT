@@ -1,29 +1,36 @@
-// {
-//     productName: '',
-//     productQuantity: ''
-// }
+export const GET_PRODUCTS = 'GET_PRODUCTS'
+export const SET_PRODUCTS = 'SET_PRODUCTS'
 
 const defaultState = {
-    products: []
+    data: '',
 }
 
 
 export default function productReducer(state = defaultState, action) {
     switch (action.type) {
-       case 'ADD_NEW_PRODUCT': 
+        case SET_PRODUCTS:
             return {
                 ...state,
-                products: [...state.products, action.payload]
+                data: action.payload.data
             }
         default:
             return state
     }
 }
 
-// ACTION CREATORS (FUNC)
-export const addNewProductAC = (value) => ({
-    type: 'ADD_NEW_PRODUCT',
+export const getProductsAC = (limit = 20, skip = 0) => ({
+    type: GET_PRODUCTS,
     payload: {
-        ...value
+        skip,
+        limit
     }
 })
+
+export const setProductsAC = ({ data }) => ({
+    type: SET_PRODUCTS,
+    payload: {
+        data
+    }
+})
+
+

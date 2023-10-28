@@ -5,7 +5,6 @@ const defaultState = {
     token: '',
 }
 
-
 export default function userReducer(state = defaultState, action) {
     switch (action.type) {
         case SET_USER_TOKEN:
