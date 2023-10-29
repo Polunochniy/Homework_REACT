@@ -4,7 +4,6 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Login from './screens/Login';
 import Contacts from './screens/Contacts';
 import ErrorPage from './screens/ErrorPage';
 import Home from './screens/Home';
@@ -12,6 +11,7 @@ import News from './screens/News';
 import Guarantee from './screens/Guarantee';
 import AboutUs from './screens/AboutUs';
 import Goods from './screens/Goods';
+import LoginPage from './screens/LoginPage';
 
 export const routes = [
   {
@@ -22,7 +22,7 @@ export const routes = [
   {
     path: "/login",
     name: "Login",
-    element: <Login/>,
+    element: <LoginPage/>,
     errorElement: <ErrorPage />,
   },
   {
