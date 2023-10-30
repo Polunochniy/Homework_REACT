@@ -12,6 +12,7 @@ import Guarantee from './screens/Guarantee';
 import AboutUs from './screens/AboutUs';
 import Goods from './screens/Goods';
 import LoginPage from './screens/LoginPage';
+import CartPage from './screens/CartPage';
 
 export const routes = [
   {
@@ -49,6 +50,11 @@ export const routes = [
     path: "/goods",
     name: "Goods",
     element: <Goods />,
+  },
+  {
+    path: "/cart",
+    name: "Cart",
+    element: <CartPage />,
   },
 ]
 

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { getProductsAC } from '../../redux/reducers/productReducer';
 import Header from '../../components/Header'
 import Menu from '../../components/Menu';
+import Card from '../../components/Card';
 
 const Goods = () => {
 
@@ -15,7 +16,6 @@ const Goods = () => {
 
 
     useEffect(() => {
-      // TO REFRESH TOKEN
       if (!isToken) {
           navigate('/')
       } else {
@@ -28,10 +28,10 @@ const Goods = () => {
         <Header />
         <Menu />
         <div className={styles.products}>
-          {products.length > 0 && products?.map((el, index) => <div key={index}>
-                  {console.log(el)}
-                  <p>{el.name}</p>
-              </div>)}
+          {products.length > 0 &&
+            products.map(product => (
+              <Card key={product.id} product={product} />
+            ))}
         </div>
     </>
   )

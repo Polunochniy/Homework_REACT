@@ -5,6 +5,7 @@ import { rootSaga } from "./sagas";
 import userReducer from './reducers/userReducer';
 import navigationReducer from './reducers/navigationReducer';
 import productReducer from './reducers/productReducer';
+import cartReducer from './reducers/cartReducer';
 
 
 const getStore = () => {
@@ -14,7 +15,8 @@ const getStore = () => {
     reducer: combineReducers({
       user: userReducer,
       products: productReducer,
-      navigation: navigationReducer
+      navigation: navigationReducer,
+      cart: cartReducer,
     }),
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
   });

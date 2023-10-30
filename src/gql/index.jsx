@@ -12,6 +12,19 @@ export const GET_GOODS = gql`
       _id
       name
       description
+      price
+      categories {
+        _id
+        createdAt
+        name
+      }
+      images {
+        _id
+        createdAt
+        text
+        url
+        originalFileName
+      }
     }
   }
 `;
