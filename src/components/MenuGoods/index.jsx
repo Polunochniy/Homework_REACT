@@ -1,9 +1,9 @@
 import React from 'react'
-import styles from '../../screens/Home/Home.module.css';
+import styles from './MenuGoods.module.css';
 
-const Menu = () => {
+const MenuGoods = () => {
   return (
-    <div className={styles.containerMenu}>
+    <div className={styles.containerMenuGoods}>
         <ul>
             <li>ЗАПЧАСТИНИ
                 <p>▼</p>
@@ -70,4 +70,4 @@ const Menu = () => {
   )
 }
 
-export default Menu
+export default MenuGoods

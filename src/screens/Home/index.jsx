@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Home.module.css';
 import Header from '../../components/Header';
 import Slider from '../../components/Slider';
+import Footer from '../../components/Footer';
 
 export const Home = () => {
   return (
@@ -24,6 +25,7 @@ export const Home = () => {
                 <button >Детальніше ⟶</button>
           </div>
       </div>
+      <Footer />
     </div>
   )
 }

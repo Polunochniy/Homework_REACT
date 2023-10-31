@@ -3,7 +3,9 @@ import './Slider.module.css'
 
 const Slider = () => {
   return (
-    <div>index</div>
+    <div>
+      
+    </div>
   )
 }
 

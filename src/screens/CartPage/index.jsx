@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import styles from './CartPage.module.css';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 const CartPage = () => {
 
@@ -33,6 +34,7 @@ const CartPage = () => {
           ))}
         </tbody>
         </table>
+        <Footer />
       </div>
   )
 }

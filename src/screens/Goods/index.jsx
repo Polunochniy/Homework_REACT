@@ -4,7 +4,7 @@ import styles from './Goods.module.css'
 import { useNavigate } from 'react-router-dom';
 import { getProductsAC } from '../../redux/reducers/productReducer';
 import Header from '../../components/Header'
-import Menu from '../../components/Menu';
+import MenuGoods from '../../components/MenuGoods';
 import Card from '../../components/Card';
 
 const Goods = () => {
@@ -26,7 +26,7 @@ const Goods = () => {
   return (
     <>
         <Header />
-        <Menu />
+        <MenuGoods />
         <div className={styles.products}>
           {products.length > 0 &&
             products.map(product => (
