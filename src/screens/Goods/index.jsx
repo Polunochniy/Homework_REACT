@@ -4,8 +4,9 @@ import styles from './Goods.module.css'
 import { useNavigate } from 'react-router-dom';
 import { getProductsAC } from '../../redux/reducers/productReducer';
 import Header from '../../components/Header'
-import MenuGoods from '../../components/MenuGoods';
+import Footer from '../../components/Footer'
 import Card from '../../components/Card';
+import Categories from '../../components/Categories';
 
 const Goods = () => {
 
@@ -26,13 +27,16 @@ const Goods = () => {
   return (
     <>
         <Header />
-        <MenuGoods />
-        <div className={styles.products}>
-          {products.length > 0 &&
-            products.map(product => (
-              <Card key={product.id} product={product} />
-            ))}
+        <div className={styles.goodsPage}>
+          <Categories />
+          <div className={styles.products}>
+            {products.length > 0 &&
+              products.map(product => (
+                <Card key={product.id} product={product} />
+              ))}
+          </div>
         </div>
+        <Footer />
     </>
   )
 }

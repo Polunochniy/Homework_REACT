@@ -12,11 +12,17 @@ const Card = ({ product }) => {
 
   return (
     <div className={styles.productCard}>
-        <img src={product.images}></img>
-        <p>{product.name}</p>
-        <p>{product.description}</p>
-        <p>{product.price}</p>
-        <button onClick={handleAddToCart}>Добавить в корзину</button>
+        <img src={product.images} />
+        <div className={styles.productText}>
+          <p className={styles.productName}>{product.name}</p>
+          <p>{product.categories._id}</p>
+          {/* <p>{product.description}</p> */}
+          <div className={styles.productPrice}>
+            <p className={styles.priceNumber}>{product.price}</p>
+            <p className={styles.productCurrency}>грн.</p>
+          </div>
+          <button onClick={handleAddToCart}>Додати у кошик</button>
+        </div>
     </div>
   );
 };

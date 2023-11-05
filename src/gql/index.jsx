@@ -6,7 +6,7 @@ export const GET_TOKEN = gql`
   }
 `;
 
-export const GET_GOODS = gql`
+export const GET_GOODS_SCHEMA = gql`
   query getGoods($query: String!) {
     GoodFind(query: $query) {
       _id
@@ -19,12 +19,17 @@ export const GET_GOODS = gql`
         name
       }
       images {
-        _id
-        createdAt
-        text
         url
-        originalFileName
       }
+    }
+  }
+`;
+
+export const GET_CATEGORIES_SCHEMA = gql`
+  query getGoods($query: String!) {
+    CategoryFind(query: $query) { 
+      _id
+      name
     }
   }
 `;

@@ -1,10 +1,12 @@
 export const GET_PRODUCTS = 'GET_PRODUCTS'
 export const SET_PRODUCTS = 'SET_PRODUCTS'
+export const GET_CATEGORIES = 'GET_CATEGORIES'
+export const SET_CATEGORIES = 'SET_CATEGORIES'
 
 const defaultState = {
-    data: '',
+    data: [],
+    categories: []
 }
-
 
 export default function productReducer(state = defaultState, action) {
     switch (action.type) {
@@ -12,7 +14,12 @@ export default function productReducer(state = defaultState, action) {
             return {
                 ...state,
                 data: action.payload.data
-            }
+            };
+        case SET_CATEGORIES:
+            return {
+                ...state,
+                categories: action.payload.categories
+            };
         default:
             return state
     }
@@ -32,5 +39,21 @@ export const setProductsAC = ({ data }) => ({
         data
     }
 })
+
+export const getCategoriesAC = (limit = 30, skip = 0) => ({
+    type: GET_CATEGORIES,
+    payload: {
+        skip,
+        limit
+    }
+})
+
+export const setCategoriesAC = ({ data }) => ({
+    type: SET_CATEGORIES,
+    payload: {
+        categories: data
+    }
+})
+
 
 

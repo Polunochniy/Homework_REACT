@@ -3,11 +3,10 @@ import {
   setUserTokenAC,
   GET_TOKEN_ACTION,
 } from "../reducers/userReducer";
-import { GET_GOODS, GET_TOKEN } from "../../gql";
+import { GET_TOKEN } from "../../gql";
 import { client } from "../../api";
 import { toast } from "react-toastify";
 import { navigateAC } from "../reducers/navigationReducer";
-import { GET_PRODUCTS, setProductsAC } from "../reducers/productReducer";
 
 // WORKERS
 function* getToken(action) {
@@ -26,34 +25,8 @@ function* getToken(action) {
   }
 }
 
-function* getProducts(action) {
-  try {
-    const res = yield call(() => client.query({
-      query: GET_GOODS,
-      variables: {
-        query: JSON.stringify([
-          {},
-          // {
-          //   $or: [{ title: "/Apple/" }, { description: "/and/" }]
-          // },
-          {
-            limit: [action.payload.limit],
-            skip: [action.payload.skip]
-          },
-
-        ])
-      }
-    }))
-    yield put(setProductsAC({ data: res.data.GoodFind }));
-    yield call(toast.success, `LOADED ${res.data.GoodFind.length} GOODS`);
-  } catch (error) {
-    yield call(toast.warn, "ERROR WITH GETTING GOODS");
-  }
-
-}
 
 // WATCHER
 export function* userSaga() {
   yield takeEvery(GET_TOKEN_ACTION, getToken);
-  yield takeEvery(GET_PRODUCTS, getProducts);
 }

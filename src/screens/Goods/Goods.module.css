@@ -3,6 +3,12 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 50px;
-    margin-top: 50px;
+    gap: 15px;
+}
+
+.goodsPage {
+    display: flex;
+    justify-content: center;
+    margin: 50px 30px 50px 30px;
+    gap: 20px;
 }
