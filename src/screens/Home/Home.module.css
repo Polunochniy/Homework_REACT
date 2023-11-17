@@ -4,6 +4,47 @@
     align-items: center;
 }
 
+.home h1 {
+    font-size: 30px;
+    margin: 100px 0 50px 0;
+}
+
+.buttonLogin {
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 15px;
+    border-color: rgb(3, 3, 159);
+    cursor: pointer;
+    margin-bottom: 30px;
+    background-color: rgb(255, 255, 255);
+    color: blue;
+}
+
+.buttonLogin:hover {
+    background-color: blue;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    width: 270px;
+    height: 60px;
+}
+
+.buttonRegistration {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    text-decoration: underline;
+    margin-bottom: 100px;
+}
+
+.buttonRegistration:hover {
+    color: blue;
+}
+
 .info {
     display: flex;
     align-items: center;
@@ -78,5 +119,15 @@
 .aboutUs button:hover {
     color: blue;
     text-shadow: rgb(0, 0, 255) 0 0 20px;
+    cursor: pointer;
+}
+
+.title {
+    position: absolute;
+    bottom: -30px;
+    left: 20px;
+    z-index: 2;
+    color: rgb(255, 255, 255);
+    font-size: 70px;
     cursor: pointer;
 }

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styles from './Categories.module.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { getCategoriesAC} from '../../redux/reducers/productReducer';
+import { getCategoriesAC, setSelectedCategoryAC, getProductsAC } from '../../redux/reducers/productReducer';
 
 
 const Categories = () => {
@@ -12,19 +12,23 @@ const Categories = () => {
     useEffect(() => {
         dispatch(getCategoriesAC());
       }, []);
-  
 
-  return (
-    <div>
-        <div className={styles.categoryContainer}>
-            <ul className={styles.categoryList}>
-                {categories.map((category) => (
-                <li key={category._id}>{category.name}</li>
-                ))}
-            </ul>
+    const handleCategoryClick = (categoryId) => {
+        dispatch(setSelectedCategoryAC(categoryId));
+        dispatch(getProductsAC(50, 0, categoryId));
+    };
+
+    return (
+        <div>
+            <div className={styles.categoryContainer}>
+                <ul className={styles.categoryList}>
+                    {categories.map((category) => (
+                    <li key={category._id} onClick={() => handleCategoryClick(category._id)}>{category.name}</li>
+                    ))}
+                </ul>
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default Categories

@@ -4,25 +4,7 @@
     height: 130px;
     display: flex;
     align-items: center;
-}
-
-.navigation {
-    display: flex;
-    gap: 24px;
-}
-
-.search {
-    width: 450px;
-    height: 35px;
-    border-radius: 10px;
-    color: rgb(43, 43, 43);
-    font-size: 16px;
-    padding: 0 10px 0 10px;
-}
-
-.searchImg {
-    width: 25px;
-    margin-right: 10px;
+    justify-content: center;
 }
 
 .phone {
@@ -35,17 +17,32 @@
 
 .phoneImg {
     width: 20px;
-    margin-left: 100px;
+    margin-left: 60px;
 }
 
 .entrance {
     background-color: initial;
     color: rgb(255, 255, 255);
     cursor: pointer;
-    margin-left: 100px;
+    margin-left: 60px;
     font-size: 18px;
     font-weight: bold;
 }
 .entrance:hover {
     color: blue;
+}
+
+.menu {
+    color: rgb(255, 255, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    gap: 35px;
+    font-size: 18px;
+    margin: 0 20px 0 20px;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    color: blue;
+    cursor: pointer;
 }

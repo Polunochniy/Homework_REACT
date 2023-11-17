@@ -35,6 +35,10 @@ const Login = () => {
     }
   };
 
+  const navigateToRegistration = () => {
+    navigate('/registration');
+  };
+
   return (
     <div className={styles.login}>
       <div className={styles.formLogin}>
@@ -42,16 +46,17 @@ const Login = () => {
         <form onSubmit={handleFormSubmit}>
           <div>
             <label>
-              Login:
+              Логін:
               <input type="text" name="login" value={userInfo.login} onChange={handleInputChange} />
             </label>
             <label>
-              Password:
+              Пароль:
               <input type="password" name="password" value={userInfo.password} onChange={handleInputChange} />
             </label>
           </div>
           {error && <div style={{ color: 'red'}}>{error}</div>}
           <button type="submit" className={styles.buttonLogin}>Вхід</button>
+          <button className={styles.buttonRegistration} onClick={navigateToRegistration}>Зареєструватися</button>
         </form>
       </div>
     </div>

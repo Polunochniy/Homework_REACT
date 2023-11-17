@@ -1,14 +1,55 @@
 .products {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: start;
     gap: 15px;
 }
 
 .goodsPage {
     display: flex;
     justify-content: center;
+    align-items: center;
+    align-items: start;
     margin: 50px 30px 50px 30px;
     gap: 20px;
 }
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-right: 100px;
+}
+
+.allProducts {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    color: blue;
+    font-size: 28px;
+    margin-left: 40px;
+}
+
+.allProducts:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.searchAndGoods {
+    display: flex;
+    flex-direction: column;
+    width: 72%;
+}
+
+.search {
+    width: 450px;
+    height: 35px;
+    border-radius: 10px;
+    color: rgb(43, 43, 43);
+    font-size: 16px;
+    padding: 0 10px 0 10px;
+}
+
+.searchContainer {
+    margin-bottom: 20px;
+}
+

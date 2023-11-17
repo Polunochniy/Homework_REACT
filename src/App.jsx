@@ -13,6 +13,8 @@ import AboutUs from './screens/AboutUs';
 import Goods from './screens/Goods';
 import LoginPage from './screens/LoginPage';
 import CartPage from './screens/CartPage';
+import RegistrationPage from './screens/RegisrtationPage';
+import ProductPage from './screens/ProductPage';
 
 export const routes = [
   {
@@ -55,6 +57,21 @@ export const routes = [
     path: "/cart",
     name: "Cart",
     element: <CartPage />,
+  },
+  {
+    path: "/registration",
+    name: "Registration",
+    element: <RegistrationPage />,
+  },
+  {
+    path: "/product/:productId",
+    name: "ProductPage",
+    element: <ProductPage />,
+  },
+  {
+    path: "/404",
+    name: "PageNotFound",
+    element: <ErrorPage />,
   },
 ]
 

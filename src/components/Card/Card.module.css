@@ -1,14 +1,30 @@
 .productCard {
    display: flex;
    align-items: center;
-   justify-content: center;
+   justify-content: space-evenly;
    flex-direction: column;
    width: 220px;
-   height: 280px;
    border: rgb(167, 166, 166) 1px solid;
    border-radius: 15px;
-   padding: 30px 10px 30px 10px;
-   gap: 0;
+   padding: 20px 10px 20px 10px;
+   height: 390px;
+}
+
+.productCard:hover {
+   box-shadow: 3px 3px 10px 1px gray;
+}
+
+.Image {
+   height: 45%;
+}
+
+.productCard img {
+   height: 80%;
+   max-width: 200px;
+}
+
+.productCard img:hover {
+   cursor: pointer;
 }
 
 .productName {
@@ -16,31 +32,43 @@
    text-decoration: none;
    font-size: 16px;
    font-weight: 500;
+   height: 50px;
+   margin: 0;
+}
+
+.productName:hover {
+   cursor: pointer;
+   text-decoration: underline;
 }
 
 .productText {
    display: flex;
-   justify-content: center;
+   justify-content: start;
    align-items: start;
    flex-direction: column;
    width: 220px;
-   height: auto;
+   height: 50%;
 }
 
 .productPrice {
    display: flex;
    align-items: center;
    gap: 5px;
+   color: blue;
+   margin: 0;
 }
 
 .priceNumber {
    font-size: 26px;
    font-weight: 700;
+   margin: 0;
 }
 
 .productCurrency {
    color: black;
-   font-size: 16px;
+   font-size: 18px;
+   padding-top: 4px;
+   margin: 0;
 }
 
 .productText button {

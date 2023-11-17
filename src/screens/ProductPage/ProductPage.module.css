@@ -1,0 +1,93 @@
+.productPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.productContainer {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 50px 50px 50px 50px;
+    gap: 100px;
+}
+
+.text {
+    width: 60%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.category {
+    margin: 0 0 20px 0;
+}
+
+.productCurrency {
+    color: black;
+    font-size: 24px;
+    padding-top: 4px;
+    margin: 0;
+}
+
+.price {
+    font-size: 30px;
+    font-weight: 700;
+    margin-right: 5px;
+    color: blue;
+}
+
+.priceContainer button {
+    width: 220px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+    border-radius: 15px;
+    border-color: inherit;
+    background-color: blue;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    margin-left: 50px;
+}
+
+.productImages {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.priceContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+
+.thumbnailContainer {
+    display: flex;
+    gap: 30px;
+}
+
+.thumbnail {
+    height: 100px;
+}
+
+.imageContainer {
+    height: auto;
+}
+
+.imageContainer img {
+    height: 350px;
+    max-width: 95%;
+    margin-left: 50px;
+}

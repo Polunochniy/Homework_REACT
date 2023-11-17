@@ -20,7 +20,9 @@ const Footer = () => {
         navigate('/login');
     };
 
-
+    const navigateToRegistrationPage = () => {
+        navigate('/registration');
+    };
 
     const navigateToCartPage = () => {
         navigate('/cart');
@@ -46,7 +48,7 @@ const Footer = () => {
                 <a onClick={navigateToHome}>Головна</a>
                 <a onClick={navigateToAboutUS}>Про нас</a>
                 <a onClick={navigateToLoginPage}>Увійти в систему</a>
-                <a>Зареєструватися</a>
+                <a onClick={navigateToRegistrationPage}>Зареєструватися</a>
             </div>
             <div className={styles.footerLinksColumn}>
                 <a onClick={navigateToCartPage}>Кошик</a>

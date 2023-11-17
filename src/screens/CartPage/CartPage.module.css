@@ -6,7 +6,7 @@
 }
 
 .orderList {
-    width: 900px;
+    width: 1000px;
     height: auto;
     margin: -20px 0 100px 0;
 }
@@ -16,7 +16,21 @@ table {
 }
 
 th, td {
-    border: 3px solid;
-    border-radius: 15px;
-    padding: 30px 0 30px 0;
+    border: 1px solid transparent;
+    padding: 30px 0;
+    text-align: center;
 }
+
+th {
+    border-bottom: 1px solid rgb(198, 198, 198);
+}
+
+td {
+    border-bottom: 1px solid rgb(198, 198, 198);
+}
+
+td img {
+    height: 100px;
+    vertical-align: middle;
+}
+

@@ -1,8 +1,7 @@
 import { put, takeEvery, call } from "redux-saga/effects";
 import { GET_CATEGORIES_SCHEMA, GET_GOODS_SCHEMA, } from "../../gql";
 import { client } from "../../api";
-import { toast } from "react-toastify";
-import { GET_CATEGORIES, GET_PRODUCTS, setCategoriesAC, setProductsAC } from "../reducers/productReducer";
+import { GET_CATEGORIES, GET_PRODUCTS, setCategoriesAC, setProductsAC, SET_SELECTED_CATEGORY, getProductsAC } from "../reducers/productReducer";
 
 // WORKERS
 function* getProducts(action) {
@@ -12,21 +11,17 @@ function* getProducts(action) {
         variables: {
           query: JSON.stringify([
             {},
-            // {
-            //   $or: [{ title: "/Apple/" }, { description: "/and/" }]
-            // },
             {
               limit: [action.payload.limit],
               skip: [action.payload.skip]
-            },
-  
+            }, 
           ])
         }
       }))
       yield put(setProductsAC({ data: res.data.GoodFind }));
-      yield call(toast.success, `LOADED ${res.data.GoodFind.length} GOODS`);
+      yield call(`LOADED ${res.data.GoodFind.length} GOODS`);
     } catch (error) {
-      yield call(toast.warn, "ERROR WITH GETTING GOODS");
+      yield call("ERROR WITH GETTING GOODS");
     }
   
 }
@@ -36,19 +31,36 @@ function* getCategories(action) {
         const res = yield call(() => client.query({
             query: GET_CATEGORIES_SCHEMA,
             variables: {
-                query: JSON.stringify([{}])
+                query: JSON.stringify([
+                    {},
+                    {
+                        limit: [action.payload.limit],
+                        skip: [action.payload.skip],
+                    },
+                ])
             }
         }))
-        yield put(setCategoriesAC({ data: res.data.CategoryFind }));
-        // yield call(toast.success, `LOADED ${res.data.GoodFind.length} GOODS`);
+        yield put(setCategoriesAC({
+            data: res.data.CategoryFind,
+            limit: action.payload.limit,
+            skip: action.payload.skip,
+        }));
     } catch (error) {
-        yield call(toast.warn, "ERROR WITH GETTING GOODS");
+        yield call("ERROR WITH GETTING GOODS");
     }
+}
 
+function* setSelectedCategory(action) {
+    try {
+      yield put(getProductsAC(70, 0, action.payload.selectedCategory));
+    } catch (error) {
+      console.error("Error in setSelectedCategory saga", error);
+    }
 }
 
 // WATCHER
 export function* productsSaga() {
     yield takeEvery(GET_PRODUCTS, getProducts);
     yield takeEvery(GET_CATEGORIES, getCategories);
+    yield takeEvery(SET_SELECTED_CATEGORY, setSelectedCategory);
 }

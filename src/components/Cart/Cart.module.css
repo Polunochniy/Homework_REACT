@@ -1,13 +1,14 @@
 .cartImg {
+    position: relative;
     width: 40px;
     margin-left: 50px;
     cursor: pointer;
 }
 
 .cartCount {
-    position: absolute;
-    top: 70px;
-    right: 130px;
+    position: relative;
+    top: 15px;
+    right: 13px;
     background-color: blue;
     color: white;
     width: 20px;
@@ -18,4 +19,5 @@
     align-items: center;
     font-size: 14px;
     cursor: pointer;
+    z-index: 2;
 }
