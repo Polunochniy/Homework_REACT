@@ -1,21 +1,29 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { setUserTokenAC } from '../../redux/reducers/userReducer';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getTokenAC } from '../../redux/reducers/userReducer';
 import { useNavigate } from 'react-router-dom';
-import styles from './Login.module.css'
+import styles from './Login.module.css';
 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState({
     login: '',
-    password: ''
+    password: '',
   });
+
   const [error, setError] = useState(null);
+  const token = useSelector((state) => state.user.token);
+
+  useEffect(() => {
+    if (token) {
+      navigate('/goods');
+    }
+  }, [token, navigate]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setUserInfo(prevState => ({
+    setUserInfo((prevState) => ({
       ...prevState,
       [name]: value
     }));
@@ -24,14 +32,12 @@ const Login = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      if (userInfo.login === 'admin' && userInfo.password === '123123') {
-        dispatch(setUserTokenAC('token'));
-        navigate('/goods');
-      } else {
+      dispatch(getTokenAC(userInfo));
+      if (!token) {
         setError("Невірний логін чи пароль!");
       }
     } catch (error) {
-      setError("Помилка при вході! Спробуйте ще раз.");
+        setError("Помилка при вході! Спробуйте ще раз.");
     }
   };
 
@@ -43,7 +49,7 @@ const Login = () => {
     <div className={styles.login}>
       <div className={styles.formLogin}>
         <h1>Увійти в систему:</h1>
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={(e) => handleFormSubmit(e)}>
           <div>
             <label>
               Логін:

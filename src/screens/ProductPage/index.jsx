@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
-import styles from './ProductPage.module.css'
-import { useNavigate, useParams } from 'react-router-dom'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import { useSelector, useDispatch } from 'react-redux';
+import styles from './ProductPage.module.css';
+import { useNavigate, useParams } from 'react-router-dom';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import { addProductToCart } from '../../redux/reducers/cartReducer';
 
 const ProductPage = () => {
@@ -11,7 +11,6 @@ const ProductPage = () => {
   const navigate = useNavigate();
   const { productId } = useParams();
   const products = useSelector((store) => store.products.data);
-
   const product = products.find((p) => p._id === productId);
   const [selectedImage, setSelectedImage] = useState(product?.images?.[0]?.url);
 
@@ -35,7 +34,7 @@ const ProductPage = () => {
       <div className={styles.productContainer}>
           <div className={styles.productImages}>
             <div className={styles.imageContainer}>
-              <img src={`http://shop-roles.node.ed.asmer.org.ua/${selectedImage}`} />
+              <img src={`http://shop-roles.node.ed.asmer.org.ua/${selectedImage}`} alt=''/>
             </div>
             <div className={styles.thumbnailContainer}>
               {product?.images &&
@@ -45,6 +44,7 @@ const ProductPage = () => {
                     src={`http://shop-roles.node.ed.asmer.org.ua/${image.url}`}
                     onClick={() => handleThumbnailClick(image.url)}
                     className={styles.thumbnail}
+                    alt=''
                   />
                 ))}
             </div>
@@ -63,6 +63,6 @@ const ProductPage = () => {
       <Footer />
     </div>
   )
-}
+};
 
 export default ProductPage

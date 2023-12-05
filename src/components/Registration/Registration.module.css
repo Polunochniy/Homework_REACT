@@ -1,0 +1,38 @@
+.registration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registrationForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.129);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    box-shadow: 2px -3px 7px 1px rgba(0,0,0,0.2);
+}
+
+.registrationForm h1 {
+    color: blue;
+    margin-bottom: 50px;
+}
+
+.buttonSubmitRegistration {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 15px;
+    border-color: rgb(3, 3, 159);
+    background-color: blue;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+

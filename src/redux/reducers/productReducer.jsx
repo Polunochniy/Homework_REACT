@@ -1,14 +1,14 @@
-export const GET_PRODUCTS = 'GET_PRODUCTS'
-export const SET_PRODUCTS = 'SET_PRODUCTS'
-export const GET_CATEGORIES = 'GET_CATEGORIES'
-export const SET_CATEGORIES = 'SET_CATEGORIES'
-export const SET_SELECTED_CATEGORY = 'SET_SELECTED_CATEGORY'
+export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const SET_PRODUCTS = 'SET_PRODUCTS';
+export const GET_CATEGORIES = 'GET_CATEGORIES';
+export const SET_CATEGORIES = 'SET_CATEGORIES';
+export const SET_SELECTED_CATEGORY = 'SET_SELECTED_CATEGORY';
 
 const defaultState = {
     data: [],
     categories: [],
     selectedCategory: null,
-}
+};
 
 export default function productReducer(state = defaultState, action) {
     switch (action.type) {
@@ -30,7 +30,7 @@ export default function productReducer(state = defaultState, action) {
         default:
             return state
     }
-}
+};
 
 export const getProductsAC = (limit = 100, skip = 0, selectedCategory = null) => {
     return {
@@ -48,7 +48,7 @@ export const setProductsAC = ({ data }) => ({
     payload: {
         data
     }
-})
+});
 
 export const getCategoriesAC = (limit = 20, skip = 0) => ({
     type: GET_CATEGORIES,
@@ -56,7 +56,7 @@ export const getCategoriesAC = (limit = 20, skip = 0) => ({
         skip,
         limit
     }
-})
+});
 
 export const setCategoriesAC = ({ data, limit, skip }) => ({
     type: SET_CATEGORIES,
@@ -65,12 +65,12 @@ export const setCategoriesAC = ({ data, limit, skip }) => ({
         limit,
         skip,
     }
-})
+});
 
 export const setSelectedCategoryAC = (selectedCategory) => ({
     type: SET_SELECTED_CATEGORY,
     payload: {
         selectedCategory
     },
-})
+});
 

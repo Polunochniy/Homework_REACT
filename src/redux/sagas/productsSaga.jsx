@@ -19,12 +19,10 @@ function* getProducts(action) {
         }
       }))
       yield put(setProductsAC({ data: res.data.GoodFind }));
-      yield call(`LOADED ${res.data.GoodFind.length} GOODS`);
     } catch (error) {
-      yield call("ERROR WITH GETTING GOODS");
+      console.log("ERROR WITH GETTING GOODS");
     }
-  
-}
+};
 
 function* getCategories(action) {
     try {
@@ -48,19 +46,19 @@ function* getCategories(action) {
     } catch (error) {
         yield call("ERROR WITH GETTING GOODS");
     }
-}
+};
 
 function* setSelectedCategory(action) {
     try {
       yield put(getProductsAC(70, 0, action.payload.selectedCategory));
     } catch (error) {
-      console.error("Error in setSelectedCategory saga", error);
+      console.error("ERROR IN SET SELECTED CATEGORY SAGA", error);
     }
-}
+};
 
 // WATCHER
 export function* productsSaga() {
     yield takeEvery(GET_PRODUCTS, getProducts);
     yield takeEvery(GET_CATEGORIES, getCategories);
     yield takeEvery(SET_SELECTED_CATEGORY, setSelectedCategory);
-}
+};

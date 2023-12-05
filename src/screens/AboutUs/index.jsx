@@ -1,13 +1,18 @@
-import React from 'react'
+import React from 'react';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import styles from './AboutUs.module.css';
 
 const AboutUs = () => {
-
-
   return (
-    <div>
-
-    </div>
+    <>
+      <Header />
+      <div className={styles.aboutUs}>
+        <h1>ABOUT US</h1>
+      </div>
+      <Footer />
+    </>
   )
-}
+};
 
 export default AboutUs

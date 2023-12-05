@@ -8,8 +8,8 @@ const Footer = () => {
 
     const navigate = useNavigate();
 
-    const navigateToHome = () => {
-        navigate('/');
+    const navigateToGoods = () => {
+        navigate('/goods');
     };
 
     const navigateToAboutUS = () => {
@@ -45,7 +45,7 @@ const Footer = () => {
         <LogoContainer />
         <div className={styles.footerLinks}>
             <div className={styles.footerLinksColumn}>
-                <a onClick={navigateToHome}>Головна</a>
+                <a onClick={navigateToGoods}>Товари</a>
                 <a onClick={navigateToAboutUS}>Про нас</a>
                 <a onClick={navigateToLoginPage}>Увійти в систему</a>
                 <a onClick={navigateToRegistrationPage}>Зареєструватися</a>
@@ -61,20 +61,14 @@ const Footer = () => {
                 <a href="mailto:info@dneprmoto.com.ua">info@dneprmoto.com.ua</a>
                 <a>Київ, вул. Олександра Довженка, 3а (м. Шулявська)</a>
                 <div className={styles.social}>
-                    <img src={getImageURLInstagram()}>
-                        
-                    </img>
-                    <img src={getImageURLFacebook()}>
-
-                    </img>
-                    <img src={getImageURLYoutube()}>
-
-                    </img>
+                    <img src={getImageURLInstagram()} alt=''/>
+                    <img src={getImageURLFacebook()} alt=''/>
+                    <img src={getImageURLYoutube()} alt=''/>
                 </div>
             </div>
         </div>
     </div>
   )
-}
+};
 
 export default Footer

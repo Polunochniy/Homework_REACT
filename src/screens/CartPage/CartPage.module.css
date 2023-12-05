@@ -5,10 +5,20 @@
     gap: 40px;
 }
 
+.bodyCartPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    gap: 50px;
+}
+
 .orderList {
-    width: 1000px;
+    width: 1100px;
     height: auto;
-    margin: -20px 0 100px 0;
+    margin-top: -20px;
+    margin-bottom: -20px;
 }
 
 table {
@@ -19,6 +29,7 @@ th, td {
     border: 1px solid transparent;
     padding: 30px 0;
     text-align: center;
+    word-wrap: break-word;
 }
 
 th {
@@ -27,10 +38,69 @@ th {
 
 td {
     border-bottom: 1px solid rgb(198, 198, 198);
+    max-width: 130px;
+}
+
+td button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.quantityButton img {
+    max-height: 25px;
+    margin: 5px;
+}
+
+.removeButton img {
+    max-height: 30px;
 }
 
 td img {
     height: 100px;
     vertical-align: middle;
+    max-width: 120px;
+}
+
+.noneItems {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.totalAmount {
+    font-size: 26px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.textAmount {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.amountContainer div {
+    width: 1100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.order {
+    width: 240px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+    border-radius: 15px;
+    border-color: inherit;
+    background-color: blue;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
 }
 

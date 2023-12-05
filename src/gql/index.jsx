@@ -34,3 +34,29 @@ export const GET_CATEGORIES_SCHEMA = gql`
   }
 `;
 
+export const GET_NEW_USER = gql`
+mutation UserUpsert($user: UserInput) {
+  UserUpsert(user: $user) {
+    _id
+    createdAt
+    login
+    nick
+  }
+}
+`;
+
+export const GET_ORDER = gql`
+mutation newOrder($goods: [OrderGoodInput]) {
+  OrderUpsert(order: {orderGoods: $goods}) {
+    _id
+    total
+    orderGoods {
+      _id
+      goodName
+      price
+      count
+    }
+  }
+}
+`;
+

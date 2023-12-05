@@ -1,9 +1,6 @@
 import React from 'react';
 import './App.css';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Contacts from './screens/Contacts';
 import ErrorPage from './screens/ErrorPage';
 import Home from './screens/Home';
@@ -73,11 +70,9 @@ export const routes = [
     name: "PageNotFound",
     element: <ErrorPage />,
   },
-]
+];
 
 const router = createBrowserRouter(routes);
-
 const App = () => <RouterProvider router={router} />;
-
 
 export default App;

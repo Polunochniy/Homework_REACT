@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react'
-import styles from './Categories.module.css'
+import React, { useEffect } from 'react';
+import styles from './Categories.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCategoriesAC, setSelectedCategoryAC, getProductsAC } from '../../redux/reducers/productReducer';
 
-
 const Categories = () => {
-
     const dispatch = useDispatch();
     const categories = useSelector((state) => state.products.categories);
 
@@ -29,6 +27,6 @@ const Categories = () => {
             </div>
         </div>
     )
-}
+};
 
 export default Categories

@@ -1,19 +1,21 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import styles from './Header.module.css';
-import { getImageURLPhone } from '../../utils/helpers'
+import { getImageURLPhone } from '../../utils/helpers';
 import LogoContainer from '../../containers/LogoContainer';
 import Cart from '../../components/Cart'
 
 const Header = () => {
     const navigate = useNavigate();
+    const user = useSelector((state) => state.user);
 
-    const navigateToGoods = () => {
+    const navigateTLogin = () => {
         navigate('/login');
     };
 
-    const navigateToHomePage = () => {
-        navigate('/');
+    const navigateToGoods = () => {
+        navigate('/goods');
     };
 
     const navigateToAboutUs = () => {
@@ -36,7 +38,7 @@ const Header = () => {
         <div className={styles.container}>
             <LogoContainer />
             <div className={styles.menu}>
-                <a onClick={navigateToHomePage}>Головна</a>
+                <a onClick={navigateToGoods}>Товари</a>
                 <a onClick={navigateToAboutUs}>Про нас</a>
                 <a onClick={navigateToGuarantee}>Гарантія</a>
                 <a onClick={navigateToContacts}>Контакти</a>
@@ -44,11 +46,15 @@ const Header = () => {
             </div>
             <img src={getImageURLPhone()} className={styles.phoneImg}/>
             <a href="tel:+380985554433" className={styles.phone}>+38 (098) 555-44-33</a>
-            <a onClick={navigateToGoods} className={styles.entrance}>Вхід / Реєстрація</a>
+            {user.token ? (
+                <span className={styles.userName}>{user.login}</span>
+            ) : (
+                <a onClick={navigateTLogin} className={styles.entrance}>Вхід / Реєстрація</a>
+            )}
             <Cart />
         </div>
     )
-}
+};
 
 export default Header
 

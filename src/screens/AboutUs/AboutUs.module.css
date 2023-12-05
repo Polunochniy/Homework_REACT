@@ -1,0 +1,11 @@
+.aboutUs {
+    height: 430px;
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.aboutUs h1 {
+    font-size: 100px;
+    margin: 0;
+}
