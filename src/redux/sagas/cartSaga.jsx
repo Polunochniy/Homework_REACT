@@ -1,5 +1,5 @@
 import { put, takeEvery, select, call } from "redux-saga/effects";
-import {ADD_PRODUCT_TO_CART, DECREASE_QUANTITY, updateProductClickCount, removeProductFromCart, SEND_ORDER } from "../reducers/cartReducer";
+import { ADD_PRODUCT_TO_CART, updateProductClickCount, SEND_ORDER } from "../reducers/cartReducer";
 import { GET_ORDER } from "../../gql";
 import { orderDataUpdate } from "../../utils/helpers";
 import { client } from "../../api";

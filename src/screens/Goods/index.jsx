@@ -49,8 +49,8 @@ const Goods = () => {
   };
 
   const filteredProducts = selectedCategory
-    ? products.filter((product) => product.categories.some((category) => category._id === selectedCategory))
-    : products;
+  ? products.filter((product) => product.categories && product.categories.some((category) => category._id === selectedCategory))
+  : products;
 
   const searchResults = searchText
     ? filteredProducts.filter((product) => product.name.toLowerCase().includes(searchText.toLowerCase()))
@@ -77,7 +77,7 @@ const Goods = () => {
   return (
     <>
       <Header />
-      <div className={styles.goodsPage}>
+      <div className={styles.goodsPage}>  
         <div className={styles.categories}>
           <a className={styles.allProducts} onClick={handleAllProductsClick}>Усі товари</a>
           <Categories onCategoryChange={handleCategoryChange} />

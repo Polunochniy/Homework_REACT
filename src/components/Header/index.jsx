@@ -10,7 +10,7 @@ const Header = () => {
     const navigate = useNavigate();
     const user = useSelector((state) => state.user);
 
-    const navigateTLogin = () => {
+    const navigateToLogin = () => {
         navigate('/login');
     };
 
@@ -49,7 +49,7 @@ const Header = () => {
             {user.token ? (
                 <span className={styles.userName}>{user.login}</span>
             ) : (
-                <a onClick={navigateTLogin} className={styles.entrance}>Вхід / Реєстрація</a>
+                <a onClick={navigateToLogin} className={styles.entrance}>Вхід / Реєстрація</a>
             )}
             <Cart />
         </div>
